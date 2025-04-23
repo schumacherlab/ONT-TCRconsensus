@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ONT-TCRconsensus"
+version = "0.1.0"
+description = "ONT-TCRconsensus"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" } 
+authors = [{ name = "Marius Messemaker" }]
+
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Natural Language :: English",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3"
+]
+
+dependencies = [
+    "bcftools>=1.21",
+    "medaka>=2.0.1", 
+    "minimap2>=2.24", 
+    "numpy>=1.26.4", 
+    "pandas>=2.2.2",  
+    "pysam>=0.22.0", 
+    "pyspoa>=0.2.1", 
+    "python-edlib>=1.3.9", 
+    "ray-core>=2.37.0", 
+    "ray-default>=2.37.0", 
+    "samtools>=1.21", 
+    "seqkit>=2.8.2", 
+    "vsearch>=2.29.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/schumacherlab/ONT-TCRconsensus"
+Repository = "https://github.com/schumacherlab/nanopore_tcr_consensus/ONT-TCRconsensus.git"
+
+[project.scripts]
+tcr_consensus = "ONT-TCRconsensus.tcr_consensus:main"
