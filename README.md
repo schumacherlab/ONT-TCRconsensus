@@ -47,7 +47,7 @@ ONT-TCRconsensus creates and counts high accuracy full-length unique TCR molecul
 ONT-TCRconensus performance on a ~70 M reads Promethion R10.4.1 run:
 | CPU model | # CPUs | Memory G | ~Run time h | 
 |----------------|------------------|------------------|----------------|
-| Intel Xeon Silver | 175    |  300G | 20-24 h |
+| Intel Xeon Silver | 110    |  275G | 20-24 h |
 | Intel Xeon Gold  | 128    | 800G  | 5-6 h| 
 
 We refer to <a href="https://github.com/nanoporetech/dorado" target="_blank">dorado</a> for basecalling performance. 
