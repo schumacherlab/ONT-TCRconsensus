@@ -5,11 +5,13 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ONT-TCRconsensus"
 version = "0.1.0"
-description = "ONT-TCRconsensus"
+description = "ONT-TCRconsensus creates and counts high accuracy full-length unique TCR molecule consensus sequences."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" } 
-authors = [{ name = "Marius Messemaker" }]
+authors = [{ name = "Marius Messemaker" },
+           { name = "Bjørn P.Y. Kwee" },
+        ]
 
 classifiers = [
     "Development Status :: 1 - Planning",

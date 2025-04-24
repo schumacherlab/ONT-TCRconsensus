@@ -1,4 +1,4 @@
-name: ont_tcr_consensus.yml
+name: ont_tcr_consensus_env
 channels:
   - nanoporetech
   - conda-forge

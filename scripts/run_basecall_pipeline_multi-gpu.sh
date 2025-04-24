@@ -12,8 +12,8 @@
 
 ######### HOW TO USE THIS SCRIPT #########
 ### 0. SETUP:
-###   0.1: MAKE THE TARGET DIR WITH A logs/ DIRECTORY and
-###   0.2: get correct environment for dorado and nanopore_env
+###   0.1: MAKE THE TARGET DIR WITH A logs/ DIRECTORY
+###   0.2: get correct environment for dorado and ont_tcr_consensus_env
 ###   0.3: make sure to have the correct barcodes_run.txt file in the directory
 ### 1. COPY THIS SCRIPT TO THE TARGET DIRECTORY
 ### 2. ADAPT WITH CORRECT PROJECT_NAME
@@ -21,7 +21,7 @@
 ##########################################
 
 source ~/miniconda3/etc/profile.d/conda.sh
-conda activate nanopore_env
+conda activate ont_tcr_consensus_env
 
 PROJECT_NAME=$(basename "$PWD")
 INDIR="./in"
