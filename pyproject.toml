@@ -36,7 +36,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/schumacherlab/ONT-TCRconsensus"
-Repository = "https://github.com/schumacherlab/nanopore_tcr_consensus/ONT-TCRconsensus.git"
+Repository = "https://github.com/schumacherlab/ONT-TCRconsensus.git"
 
 [project.scripts]
 tcr_consensus = "ONT-TCRconsensus.tcr_consensus:main"

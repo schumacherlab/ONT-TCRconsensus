@@ -27,5 +27,5 @@
 "blast_id_threshold": null,
 "vsearch_identity_consensus": 0.97,
 "dorado_excutable": "[insert path to dorado]/bin/dorado",
-"nanopore_tcr_seq_primers_fasta": "[insert path to nanopore_tcr_consensus]/nanopore_tcr_consensus/primers/primers.fasta"
+"nanopore_tcr_seq_primers_fasta": "[insert path to ONT-TCRconsensus]/ONT-TCRconsensus/primers/primers.fasta"
 }
