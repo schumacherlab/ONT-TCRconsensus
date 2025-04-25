@@ -10,6 +10,6 @@
 mkdir -p ./logs
 
 source ~/miniconda3/etc/profile.d/conda.sh
-conda activate ont_tcr_consensus
+conda activate ont_tcr_consensus_env
 
 tcr_consensus $1

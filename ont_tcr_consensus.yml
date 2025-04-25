@@ -1,4 +1,4 @@
-name: ont_tcr_consensus.yml
+name: ont_tcr_consensus_env
 channels:
   - nanoporetech
   - conda-forge
@@ -6,13 +6,13 @@ channels:
   - anaconda
   - defaults
 dependencies:
-  - anaconda::pandas
-  - bioconda::samtools
-  - bioconda::seqkit
-  - bioconda::vsearch
-  - conda-forge::ray-default
+  - anaconda::pandas>=2.2.2
+  - bioconda::samtools>=1.21
+  - bioconda::seqkit>=2.9.0
+  - bioconda::vsearch>=2.29.1
+  - conda-forge::ray-default>=2.37.0
   - nanoporetech::medaka=2.0.1
   - python=3.10
-  - ipykernel
-  - matplotlib
-  - scipy
+  - ipykernel>=6.29.5
+  - matplotlib>=3.9.2
+  - scipy>=1.14.1

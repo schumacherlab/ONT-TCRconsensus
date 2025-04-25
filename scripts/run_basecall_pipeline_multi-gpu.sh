@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#SBATCH --job-name nano_basecall_test
+#SBATCH --job-name nanopore_basecall
 #SBATCH -N 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --gpus 4
@@ -12,42 +12,36 @@
 
 ######### HOW TO USE THIS SCRIPT #########
 ### 0. SETUP:
-###   0.1: MAKE THE TARGET DIR WITH A logs/ DIRECTORY and
-###   0.2: get correct environment for dorado and nanopore_env
+###   0.1: make the target directory with a logs/ directory and add the pods inside in/ directory. The target dir name should be name of your project.
+###   0.2: get correct environment for dorado and ont_tcr_consensus_env
 ###   0.3: make sure to have the correct barcodes_run.txt file in the directory
-### 1. COPY THIS SCRIPT TO THE TARGET DIRECTORY
-### 2. ADAPT WITH CORRECT PROJECT_NAME
+### 1. COPY THIS SCRIPT TO THE TARGET DIRECTORY 
+### 2. ADAPT WITH CORRECT PROJECT_NAME (it will match the name of the directory from which this script is run)
 ### 3. RUN WITH `sbatch run_basecall_pipeline_multi-gpu.sh`
 ##########################################
 
 source ~/miniconda3/etc/profile.d/conda.sh
-conda activate nanopore_env
+conda activate ont_tcr_consensus_env
 
 PROJECT_NAME=$(basename "$PWD")
 INDIR="./in"
-OUTDIR="./out"  # this was sent by arno, we changed it at ###samtools### to ./out because of a path error
-# if they don't exist, create the directories
+OUTDIR="./out"  
 mkdir -p $OUTDIR
 
-# check if a file called barcodes_run.txt exists, else exit with error "barcodes_run.txt does not exist"
 if [ ! -f barcodes_run.txt ]; then
   echo "barcodes_run.txt does not exist"
   exit 1
 fi
 
-# detect how many directiries are in INDIR with the name /pod*/
 number_of_pods=$(ls -d $INDIR/pod*/ | wc -l)
 
-# print the current date and time
 date
 echo $number_of_pods
 echo "runnung on $number_of_pods pods, in multi-gpu mode (4 gpus)"
 
 #####basecalling#####
 echo 'START basecalling'
-# for SEQ in $(seq 1 $number_of_pods); do
-for SEQ in $(seq 1 $number_of_pods); do # changed to 3 to avoid re-running the first two pods
-  echo $SEQ
+for SEQ in $(seq 1 $number_of_pods); do 
   date
 
   mkdir -p $OUTDIR/bam_$SEQ

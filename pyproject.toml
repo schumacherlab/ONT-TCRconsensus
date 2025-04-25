@@ -2,14 +2,19 @@
 requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+packages = ["ont_tcr_consensus"]
+
 [project]
 name = "ONT-TCRconsensus"
 version = "0.1.0"
-description = "ONT-TCRconsensus"
+description = "ONT-TCRconsensus creates and counts high accuracy full-length unique TCR molecule consensus sequences."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" } 
-authors = [{ name = "Marius Messemaker" }]
+authors = [{ name = "Marius Messemaker" },
+           { name = "Bjørn P.Y. Kwee" },
+        ]
 
 classifiers = [
     "Development Status :: 1 - Planning",
@@ -36,7 +41,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/schumacherlab/ONT-TCRconsensus"
-Repository = "https://github.com/schumacherlab/nanopore_tcr_consensus/ONT-TCRconsensus.git"
+Repository = "https://github.com/schumacherlab/ONT-TCRconsensus.git"
 
 [project.scripts]
-tcr_consensus = "ONT-TCRconsensus.tcr_consensus:main"
+tcr_consensus = "ont_tcr_consensus.tcr_consensus:main"
