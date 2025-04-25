@@ -17,7 +17,7 @@ def medaka_memory_task(
     vsearch_cluster_stats_df = pd.read_csv(vsearch_cluster_stats_tsv, sep="\t")
     vsearch_cluster_stats_df = vsearch_cluster_stats_df.loc[vsearch_cluster_stats_df.loc[:, "cluster_written"] == 1, :]
     max_subreads_umi = vsearch_cluster_stats_df.loc[:, "written"].max()
-    mem_gb_per_umi_cluster = 0.0143 * max_subreads_umi + 0.0286
+    mem_gb_per_umi_cluster = 0.0143 * max_subreads_umi + 0.0286 # constants were optimized for Intel Xeon Silver
 
     with open(smolecule_fa, "r") as fasta_in:
         num_umis_per_smolecule_fa = len({line.split("_")[0] for line in fasta_in if line.startswith(">")})

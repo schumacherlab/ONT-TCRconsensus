@@ -12,11 +12,11 @@
 
 ######### HOW TO USE THIS SCRIPT #########
 ### 0. SETUP:
-###   0.1: MAKE THE TARGET DIR WITH A logs/ DIRECTORY
+###   0.1: make the target directory with a logs/ directory and add the pods inside in/ directory. The target dir name should be name of your project.
 ###   0.2: get correct environment for dorado and ont_tcr_consensus_env
 ###   0.3: make sure to have the correct barcodes_run.txt file in the directory
-### 1. COPY THIS SCRIPT TO THE TARGET DIRECTORY
-### 2. ADAPT WITH CORRECT PROJECT_NAME
+### 1. COPY THIS SCRIPT TO THE TARGET DIRECTORY 
+### 2. ADAPT WITH CORRECT PROJECT_NAME (it will match the name of the directory from which this script is run)
 ### 3. RUN WITH `sbatch run_basecall_pipeline_multi-gpu.sh`
 ##########################################
 

@@ -2,6 +2,9 @@
 requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+packages = ["ont_tcr_consensus"]
+
 [project]
 name = "ONT-TCRconsensus"
 version = "0.1.0"
@@ -41,4 +44,4 @@ Homepage = "https://github.com/schumacherlab/ONT-TCRconsensus"
 Repository = "https://github.com/schumacherlab/ONT-TCRconsensus.git"
 
 [project.scripts]
-tcr_consensus = "ONT-TCRconsensus.tcr_consensus:main"
+tcr_consensus = "ont_tcr_consensus.tcr_consensus:main"

@@ -5,26 +5,7 @@ ONT-TCRconsensus creates and counts high accuracy full-length unique TCR molecul
 <!-- Installation -->
 
 ## Installation
-### Option 1: conda and pip
-1. Clone the repo: 
-   ```sh
-   git clone https://github.com/schumacherlab/ONT-TCRconsensus.git
-   ```
-2. Navigate to the project directory:
-   ```sh
-   cd ONT-TCRconsensus
-   ```
-3. Create and activate a conda environment called ont_tcr_consensus_env:
-    ```conda create --name ont_tcr_consensus_env python=3.10
-       conda activate ont_tcr_consensus_env
-    ```
-4. Install the `ONT-TCRconsensus` package:
-   ```sh
-    python -m pip install .
-   ```
-5. Install <a href="https://github.com/nanoporetech/dorado" target="_blank">dorado</a>
-
-### Option 2: conda from yml
+### Conda from yml (currently only supported option)
 1. Clone the repo:
    ```sh
    git clone https://github.com/schumacherlab/nanopore_tcr_consensus.git
@@ -36,7 +17,7 @@ ONT-TCRconsensus creates and counts high accuracy full-length unique TCR molecul
 3. Create conda environment:
    ```
    conda env create -f ont_tcr_consensus.yml
-   conda activate ont_tcr_consensus
+   conda activate ont_tcr_consensus_env
    ```
 4. Install <a href="https://github.com/nanoporetech/dorado" target="_blank">dorado</a>
 
