@@ -15,7 +15,6 @@ def init_nanopore_analysis_dir(fastq: Union[str, os.PathLike[str]], nano_dir: Un
     library_consensus_region_fasta_dir_dict = os.path.join(library_dir, "region_fasta")
     library_consensus_umi_fasta_dir = os.path.join(library_dir, "consensus_umi_fasta")
     library_umi_counts_dir = os.path.join(library_dir, "counts")
-    outs_dir = os.path.join(library_dir, "outs")
 
     os.mkdir(library_dir)
     os.mkdir(library_logs_dir)
@@ -28,7 +27,6 @@ def init_nanopore_analysis_dir(fastq: Union[str, os.PathLike[str]], nano_dir: Un
     os.mkdir(library_consensus_region_fasta_dir_dict)
     os.mkdir(library_consensus_umi_fasta_dir)
     os.mkdir(library_umi_counts_dir)
-    os.mkdir(outs_dir)
 
     return (
         library_dir,
