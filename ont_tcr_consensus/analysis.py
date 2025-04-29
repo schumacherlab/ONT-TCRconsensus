@@ -29,7 +29,7 @@ def set_mpl_params(mpl):
     mpl.rcParams["grid.color"] = "0.8"  # default 'k'
     mpl.rcParams["grid.linestyle"] = "solid"  # default ':'
     mpl.rcParams["legend.frameon"] = False  # default True
-    mpl.rcParams["font.family"] = "Arial"  # added
+    # mpl.rcParams["font.family"] = "Arial"  # added
     mpl.rcParams["figure.dpi"] = 300
     mpl.rc("savefig", dpi=300)
     mpl.rcParams["pdf.fonttype"] = 42  # embed fonts as editable text in illustrator
@@ -406,7 +406,7 @@ def plot_hist_subreads_per_umi_cluster(
     ax, fig, gs = startfig(13, 7)
     counts, bins = np.histogram(
         num_subreads_blast_id_df.loc[:, "number_of_subreads"],
-        bins=np.arange(0.5, 120.5, 1),
+        bins=np.arange(0.5, 60.5, 1),
         density=False,
     )
 
@@ -415,9 +415,10 @@ def plot_hist_subreads_per_umi_cluster(
     bin_centers = (bins[:-1] + bins[1:]) / 2
     ax.bar(bin_centers, percentages, width=np.diff(bins), color="grey", edgecolor="none")
 
-    ax.set_xlim(0.5, 121.5)
-    ax.set_xticks(np.arange(1, 120, 1))
-    ax.set_xticklabels(np.arange(1, 120, 1), fontsize=8, rotation=90)
+    ax.set_xlim(0.5, 61.5)
+    ax.set_xticks(np.arange(1, 60, 1))
+    ax.set_xticklabels(np.arange(1, 60, 1), fontsize=8, rotation=90)
+    ax.set_ylim(0, 50)
     ax.set_ylabel("% UMI clusters", fontsize=8)
     ax.set_xlabel("# subreads in UMI cluster", fontsize=8)
 

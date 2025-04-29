@@ -7,7 +7,6 @@ import subprocess
 import sys
 
 import ray
-
 from nanopore_tcr_consensus.count import write_region_umi_counts_to_csv
 from nanopore_tcr_consensus.extract_umis import count_overlapping_umis_between_all_regions, extract_umis
 from nanopore_tcr_consensus.medaka_polish import (
@@ -69,6 +68,7 @@ def main():
     id_reference_self_homology_cluster_threshold = 1 - max_ee_rate_base
     minimal_region_overlap_consensus = run_config["minimal_region_overlap_consensus"]
     blast_id_threshold = run_config["blast_id_threshold"]
+    delete_tmp_files = run_config["delete_tmp_files"]
 
     ray.init()
 
@@ -464,15 +464,17 @@ def main():
                 overlapping_umi_edit_threshold=overlapping_umi_edit_threshold,
                 logs_dir=library_logs_dir_dict[library],
             )
+        if delete_tmp_files:
+            shutil.rmtree(library_region_cluster_fasta_dir_dict[library])
+            shutil.rmtree(library_clustering_dir_dict[library])
+            shutil.rmtree(library_umi_fasta_dir_dict[library])
+            shutil.rmtree(library_fasta_dir_dict[library])
+            shutil.rmtree(library_clustering_consensus_dir_dict[library])
+            shutil.rmtree(library_consensus_region_fasta_dir_dict[library])
+            shutil.rmtree(library_consensus_umi_fasta_dir_dict[library])
+            print("\n\n", file=sys.stderr)
 
-        shutil.rmtree(library_region_cluster_fasta_dir_dict[library])
-        shutil.rmtree(library_clustering_dir_dict[library])
-        shutil.rmtree(library_umi_fasta_dir_dict[library])
-        shutil.rmtree(library_fasta_dir_dict[library])
-        shutil.rmtree(library_clustering_consensus_dir_dict[library])
-        shutil.rmtree(library_consensus_region_fasta_dir_dict[library])
-        shutil.rmtree(library_consensus_umi_fasta_dir_dict[library])
-        print("\n\n", file=sys.stderr)
+    print("Done running all barcodes!", file=sys.stderr)
     return
 
 
